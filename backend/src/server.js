@@ -10,7 +10,9 @@ const app = express();
 app.use(clerkMiddleware())
 app.use(express.json());
 
-
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+})
 app.use("/api/inngest", serve({ client: inngest, functions }));
 
 
